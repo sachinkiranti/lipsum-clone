@@ -1,4 +1,6 @@
 import type { NextPage } from 'next'
+import Head from 'next/head'
+
 import { MouseEventHandler, useState } from "react";
 
 import { LoremIpsum } from "lorem-ipsum";
@@ -85,7 +87,14 @@ const Home: NextPage = () => {
   }
 
   return (
-    <div className="flex h-screen bg-transparent-100">
+    <div>
+      <Head>
+        <title>Lorem Ipsum</title>
+        <meta name="description" content="Lorem Ipsum by Sachin Kiranti" />
+        <meta name="name" content="Lorem Ipsum" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <div className="flex h-screen bg-transparent-100">
       <div className="bg-slate-200 border shadow-x1 p-10 max-w-lg">
         <div className="flex flex-col items-center space-y-4">
           <h1 className="font-bold text-2xl text-gray-700 w-4/6 text-center">
@@ -144,6 +153,7 @@ const Home: NextPage = () => {
       <div className="text-black p-10 font-mono text-justify max-w-screen-2xl">
         {lorem}
       </div>
+    </div>
     </div>
   )
 }
