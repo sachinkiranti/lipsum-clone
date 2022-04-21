@@ -78,7 +78,8 @@ const Home: NextPage = () => {
   );
   }
 
-  const copyLoremText = (event: MouseEventHandler<HTMLButtonElement>) => {
+  const copyLoremText = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault()
     navigator.clipboard.writeText(lorem || '');
     setCopyBtnText("Copied")
   }
